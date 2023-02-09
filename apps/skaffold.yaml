@@ -1,0 +1,36 @@
+apiVersion: skaffold/v2beta20
+kind: Config
+
+build:
+  artifacts:
+    - image: apps-web
+      docker:
+        dockerfile: apps/web/Dockerfile
+      context: .
+  local:
+    push: false
+
+profiles:
+  - name: dev
+    build:
+      local:
+        useBuildkit: true
+      artifacts:
+        - image: apps-web
+          docker:
+            dockerfile: apps/web/Dockerfile
+          context: .
+
+    deploy:
+      kubeContext: kind-local-dev
+      helm:
+        releases:
+          - name: apps-web
+            chartPath: deployments/helm/web
+            upgradeOnChange: true
+
+    portForward:
+      - resourceType: deployment
+        resourceName: apps-web
+        port: 3000
+        localPort: 3000

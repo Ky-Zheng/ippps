@@ -1,0 +1,28 @@
+{
+    "name": "config",
+    "version": "0.0.0",
+    "private": true,
+    "main": "index.js",
+    "files": [
+        "base.json",
+        "nextjs.json",
+        "react-library.json"
+    ],
+    "scripts": {
+        "update-dependencies": "npx npm-check-updates -u",
+        "lint": "TIMING=1 eslint src --fix",
+        "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist && rm -rf coverage"
+    },
+    "dependencies": {
+        "eslint-config-next": "^12.0.8",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-plugin-react": "7.28.0",
+        "eslint-config-turbo": "latest"
+    },
+    "devDependencies": {
+        "autoprefixer": "^10.4.11",
+        "postcss": "^8.4.16",
+        "tailwindcss": "^3.1.8",
+        "typescript": "^4.7.4"
+    }
+}
