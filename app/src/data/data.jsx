@@ -21,14 +21,14 @@ const data=[
 
     },
 
-    {   id: 3,
-        artist:"Claude Monet",
-        title: "Water Lily Pond",
-        date:"1918",
-        price: "$70,350,000",
-        dimension_h:"100",
-        dimensions_l:"200",
-        imageurl:"https://sothebys-com.brightspotcdn.com/dims4/default/47ff05f/2147483647/strip/true/crop/7672x3817+0+0/resize/684x340!/format/webp/quality/90/?url=http%3A%2F%2Fsothebys-brightspot.s3.amazonaws.com%2Fdotcom%2F93%2Fe4%2F6d4e92714df08e6a06bfe9e301ae%2F10680-claude-monet-le-bassin-aux-nympheas.jpg",
-    },
+    // {   id: 3,
+    //     artist:"Claude Monet",
+    //     title: "Water Lily Pond",
+    //     date:"1918",
+    //     price: "$70,350,000",
+    //     dimension_h:"100",
+    //     dimensions_l:"200",
+    //     imageurl:"https://sothebys-com.brightspotcdn.com/dims4/default/47ff05f/2147483647/strip/true/crop/7672x3817+0+0/resize/684x340!/format/webp/quality/90/?url=http%3A%2F%2Fsothebys-brightspot.s3.amazonaws.com%2Fdotcom%2F93%2Fe4%2F6d4e92714df08e6a06bfe9e301ae%2F10680-claude-monet-le-bassin-aux-nympheas.jpg",
+    // },
 ];
 
