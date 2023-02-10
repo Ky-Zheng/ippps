@@ -5,9 +5,13 @@ interface AppShellProps extends React.HTMLAttributes<HTMLDivElement> {
 declare const AppShell: ({ children }: AppShellProps) => JSX.Element;
 
 interface ICardProps {
+    artist: string;
     title: string;
-    description: string;
-    path: string;
+    date: string;
+    price: string;
+    dimensions_h: string;
+    dimensions_l: string;
+    imageurl: string;
 }
 declare const Card: ({ ...props }: ICardProps) => JSX.Element;
 
@@ -21,4 +25,6 @@ interface IProductCardProps {
 }
 declare const ProductCard: ({ ...props }: IProductCardProps) => JSX.Element;
 
-export { AppShell, Card, ProductCard };
+declare const Tabs: () => JSX.Element;
+
+export { AppShell, Card, ProductCard, Tabs };

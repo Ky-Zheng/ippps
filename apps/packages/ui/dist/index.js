@@ -28,13 +28,13 @@ var ui_exports = {};
 __export(ui_exports, {
   AppShell: () => AppShell,
   Card: () => Card,
-  ProductCard: () => ProductCard
+  ProductCard: () => ProductCard,
+  Tabs: () => Tabs
 });
 module.exports = __toCommonJS(ui_exports);
 
 // components/shell/header.tsx
 var import_link = __toESM(require("next/link"));
-var import_image = __toESM(require("next/image"));
 var import_jsx_runtime = require("react/jsx-runtime");
 var Header = () => {
   return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("header", {
@@ -44,20 +44,12 @@ var Header = () => {
         className: "flex flex-wrap justify-between items-center mx-auto max-w-screen-xl",
         children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_link.default, {
           href: "/",
-          children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+          children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
             className: "flex items-center",
-            children: [
-              /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_image.default, {
-                src: "/logo.png",
-                alt: "Logo",
-                width: 40,
-                height: 40
-              }),
-              /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-                className: "ml-2 text-xl font-bold text-gray-800",
-                children: "Saks Marketing"
-              })
-            ]
+            children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+              className: "ml-2 text-5xl font-sans font-bold text-gray-800 my-5",
+              children: "Impressionism Painting Prediction"
+            })
           })
         })
       })
@@ -75,12 +67,12 @@ var Footer = () => {
       /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("span", {
         className: "text-sm text-gray-500 sm:text-center",
         children: [
-          "\xA9 2022",
+          "\xA9 2023",
           " ",
           /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(import_link2.default, {
             href: "/",
             className: "hover:underline",
-            children: "Saks Markerting"
+            children: "Impressionism Painting Prediction"
           }),
           ". All Rights Reserved."
         ]
@@ -135,39 +127,74 @@ var AppShell = ({ children }) => {
 };
 
 // components/cards/card.tsx
-var import_link3 = __toESM(require("next/link"));
 var import_jsx_runtime4 = require("react/jsx-runtime");
 var Card = ({ ...props }) => {
   return /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", {
-    className: "max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-md",
+    className: "flex flex-1 flex-col justify-between max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700",
     children: [
       /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("a", {
         href: "#",
-        children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("h5", {
-          className: "mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white",
-          children: props.title
+        children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("img", {
+          className: "rounded-t-lg",
+          src: props.imageurl,
+          alt: ""
         })
       }),
-      /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("p", {
-        className: "mb-3 font-normal text-gray-700 dark:text-gray-400",
-        children: props.description
-      }),
-      /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(import_link3.default, {
-        href: props.path,
-        className: "inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 ",
+      /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", {
+        className: "p-5",
         children: [
-          "View App",
-          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("svg", {
-            "aria-hidden": "true",
-            className: "w-4 h-4 ml-2 -mr-1",
-            fill: "currentColor",
-            viewBox: "0 0 20 20",
-            xmlns: "http://www.w3.org/2000/svg",
-            children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("path", {
-              "fill-rule": "evenodd",
-              d: "M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z",
-              clipRule: "evenodd"
-            })
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("a", {
+            href: "#",
+            children: [
+              /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("h5", {
+                className: "mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white",
+                children: props.artist
+              }),
+              /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("h1", {
+                className: "mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white",
+                children: [
+                  props.title,
+                  ", ",
+                  props.date
+                ]
+              })
+            ]
+          }),
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("p", {
+            className: "mb-3 font-normal text-gray-700 dark:text-gray-400",
+            children: [
+              "size ",
+              props.dimensions_h,
+              " * ",
+              props.dimensions_l,
+              " cm"
+            ]
+          }),
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("p", {
+            className: "mb-3 font-normal text-gray-700 dark:text-gray-400",
+            children: [
+              "sold ",
+              props.price
+            ]
+          }),
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("a", {
+            href: "/favorite",
+            className: "inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800",
+            children: [
+              "Add to Favorite",
+              /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("svg", {
+                "aria-hidden": "true",
+                className: "w-4 h-4 ml-2 -mr-1",
+                fill: "currentColor",
+                viewBox: "0 0 20 20",
+                xmlns: "http://www.w3.org/2000/svg",
+                children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("path", {
+                  "fill-rule": "evenodd",
+                  d: "M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z",
+                  "clip-rule": "evenodd"
+                })
+              })
+            ]
           })
         ]
       })
@@ -223,9 +250,45 @@ var ProductCard = ({ ...props }) => {
     ]
   });
 };
+
+// components/tabs/tab.tsx
+var import_jsx_runtime6 = require("react/jsx-runtime");
+var Tabs = () => {
+  return /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("ul", {
+    className: "mb-2 flex flex-wrap text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400",
+    children: [
+      /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("li", {
+        className: "mr-2",
+        children: /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("a", {
+          href: "#",
+          "aria-current": "page",
+          className: "inline-block p-4 text-blue-600 bg-gray-100 rounded-t-lg active dark:bg-gray-800 dark:text-blue-500",
+          children: "Home"
+        })
+      }),
+      /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("li", {
+        className: "mr-2",
+        children: /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("a", {
+          href: "/favorite",
+          className: "inline-block p-4 rounded-t-lg hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300",
+          children: "Favorite"
+        })
+      }),
+      /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("li", {
+        className: "mr-2",
+        children: /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("a", {
+          href: "prediction",
+          className: "inline-block p-4 rounded-t-lg hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300",
+          children: "Prediction"
+        })
+      })
+    ]
+  });
+};
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
   AppShell,
   Card,
-  ProductCard
+  ProductCard,
+  Tabs
 });

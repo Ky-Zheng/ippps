@@ -1,5 +1,5 @@
 {
-  "name": "saks-ml-apps",
+  "name": "ippps",
   "version": "0.0.0",
   "private": true,
   "workspaces": [
@@ -21,6 +21,8 @@
   "engines": {
     "node": ">=14.0.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@material-tailwind/react": "^1.2.5"
+  },
   "packageManager": "yarn@1.22.19"
 }

@@ -8,9 +8,9 @@ export const Header = () => {
         <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
           <Link href="/">
             <div className="flex items-center">
-              <Image src="/logo.png" alt="Logo" width={40} height={40} />
-              <span className="ml-2 text-xl font-bold text-gray-800">
-                Saks Marketing
+              {/* <Image src="/logo.png" alt="Logo" width={40} height={40} /> */}
+              <span className="ml-2 text-5xl font-sans font-bold text-gray-800 my-5">
+              Impressionism Painting Prediction
               </span>
             </div>
           </Link>
