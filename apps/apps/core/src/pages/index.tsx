@@ -1,55 +1,81 @@
-import { Card,tab, Tabs } from "ui";
+import * as React from "react";
+import { useRouter } from "next/router";
+import { Input } from "@material-ui/core";
 
-const data=[
-  {   id: 1,
-      artist:"Paul Cezanne",
-      title: "Maisons au Chou, a Pontoise",
-      date:"1881",
-      price: "$3,660,000",
-      dimensions_h:"65.2",
-      dimensions_l:"81.2",
-      imageurl:"https://www.artnet.com/WebServices/images/ll00041lldk8yJFgUNECfDrCWvaHBOc2qbG/paul-cézanne-maisons-au-chou,-à-pontoise.jpg",
+export default function Register() {
+  const router = useRouter();
 
-  },
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    router.push("/home")
+  };
 
-  {   id: 2,
-      artist:"Edouard Manet",
-      title: "Spring",
-      date:"1881",
-      price: "$89,000,000",
-      dimensions_h:"74",
-      dimensions_l:"51.5",
-      imageurl:"https://ca-times.brightspotcdn.com/dims4/default/7565884/2147483647/strip/false/crop/1439x2048+0+0/resize/1044x1486!/quality/80/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F6c%2F2a%2F2f0b2c73da4690bbdae983380ccd%2Fla-et-cm-getty-comes-away-with-manet-20141105-001",
-
-  },
-
-  {   id: 3,
-      artist:"Claude Monet",
-      title: "Water Lily Pond",
-      date:"1918",
-      price: "$70,350,000",
-      dimensions_h:"100",
-      dimensions_l:"200",
-      imageurl:"https://sothebys-com.brightspotcdn.com/dims4/default/47ff05f/2147483647/strip/true/crop/7672x3817+0+0/resize/684x340!/format/webp/quality/90/?url=http%3A%2F%2Fsothebys-brightspot.s3.amazonaws.com%2Fdotcom%2F93%2Fe4%2F6d4e92714df08e6a06bfe9e301ae%2F10680-claude-monet-le-bassin-aux-nympheas.jpg",
-  },
-];
-
-
-
-export default function Home() {
   return (
     <div>
-    <Tabs/>
-    <div className="grid grid-cols-4 mx-auto gap-6 flex flex-1 flex-col justify-between">
-      {data.map((item) => (
-        <Card title={item.title} artist={item.artist} date={item.date}
-        price={item.price} dimensions_h={item.dimensions_h} dimensions_l={item.dimensions_l} 
-        imageurl={item.imageurl}/>
-      ))}
+      <section className="bg-gray-50 dark:bg-gray-900">
+        <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+          <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+            <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
+              <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+                Create A New Account
+              </h1>
+              <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6" >
+                <div>
+                  <label
+                    htmlFor="email"
+                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  >
+                    Your email
+                  </label>
+                  <Input
+                    type="email"
+                    name="email"
+                    id="email"
+                    className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="monet@gmail.com"
+                  />
+                </div>
+                <div>
+                  <label
+                    htmlFor="password"
+                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  >
+                    Password
+                  </label>
+                  <Input
+                    type="password"
+                    name="password"
+                    id="password"
+                    placeholder="••••••••"
+                    className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  />
+                </div>
+                <div className="mx-5">
+                  <a href="/home">
+                    <button
+                      type="submit"
+                      className="w-full text-white bg-blue-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                    >
+                      Create an account
+                    </button>
+                  </a>
+                  <div className="my-3">
+                  <p className="text-sm font-light text-gray-500 dark:text-gray-400">
+                    Already have an account?
+                    <a
+                      href="/login"
+                      className="font-medium text-primary-600 hover:underline dark:text-primary-500"
+                    >
+                      Login here
+                    </a>
+                  </p>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
-    </div>
-
   );
 }
-;
-

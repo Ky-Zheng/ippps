@@ -12,6 +12,7 @@ interface ICardProps {
     dimensions_h: string;
     dimensions_l: string;
     imageurl: string;
+    addorremove: string;
 }
 declare const Card: ({ ...props }: ICardProps) => JSX.Element;
 
@@ -27,4 +28,10 @@ declare const ProductCard: ({ ...props }: IProductCardProps) => JSX.Element;
 
 declare const Tabs: () => JSX.Element;
 
-export { AppShell, Card, ProductCard, Tabs };
+declare const PredTabs: () => JSX.Element;
+
+declare const FavTabs: () => JSX.Element;
+
+declare const LoginTabs: () => JSX.Element;
+
+export { AppShell, Card, FavTabs, LoginTabs, PredTabs, ProductCard, Tabs };

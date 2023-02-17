@@ -1,93 +1,105 @@
+import { Input } from "@material-ui/core";
 import * as React from "react";
+import { PredTabs } from "ui";
 
-export default function PredictionInput() {
-  return (    
-<div class="block p-6 rounded-lg shadow-lg bg-white max-w-md">
-  <form>
-    <div class="form-group mb-6">
-      <input type="text" class="form-control block
-        w-full
-        px-3
-        py-1.5
-        text-base
-        font-normal
-        text-gray-700
-        bg-white bg-clip-padding
-        border border-solid border-gray-300
-        rounded
-        transition
-        ease-in-out
-        m-0
-        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput7"
-        placeholder="Name">
+
+export default function Prediction() {
+  return (
+    <div>
+      <PredTabs/>
+    
+    <div className="mt-5 flex flex-col justify-center items-center">
+      <form className="w-full max-w-lg">
+        <div className="flex flex-wrap -mx-3 mb-6">
+          <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+            <label
+              className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+              htmlFor="grid-first-name"
+            >
+              Artist
+            </label>
+            <Input
+              className="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+              id="grid-artist"
+              type="text"
+              placeholder="Paul Cezanne"
+            />
+            <p className="text-red-500 text-xs italic">
+              Please fill out this field.
+            </p>
+          </div>
+          <div className="w-full md:w-1/2 px-3">
+            <label
+              className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+              htmlFor="grid-year"
+            >
+              Year
+            </label>
+            <Input
+              className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              id="grid-year"
+              type="text"
+              placeholder="1891"
+            />
+          </div>
+        </div>
+        <div className="flex flex-wrap -mx-3 mb-6">
+          <div className="w-full px-3">
+            <label
+              className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+              htmlFor="grid-title"
+            >
+              Title of the painting
+            </label>
+            <Input
+              className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              id="grid-title"
+              type="text"
+              placeholder="Card Players"
+            />
+          </div>
+        </div>
+        <div className="flex flex-wrap -mx-3 mb-2">
+          <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+            <label
+              className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+              htmlFor="grid-len"
+            >
+              Length
+            </label>
+            <Input
+              className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              id="grid-height"
+              type="text"
+              placeholder="60"
+            />
+            <p className="text-gray-600 text-xs italic">cm</p>
+          </div>
+
+          <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+            <label
+              className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+              htmlFor="grid-zip"
+            >
+              Height
+            </label>
+            <Input
+              className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              id="grid-zip"
+              type="text"
+              placeholder="48"
+            />
+            <p className="text-gray-600 text-xs italic">cm</p>
+          </div>
+        </div>
+        <button
+          className="mt-5 shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+          type="button"
+        >
+          Sumbmit
+        </button>
+      </form>
     </div>
-    <div class="form-group mb-6">
-      <input type="email" class="form-control block
-        w-full
-        px-3
-        py-1.5
-        text-base
-        font-normal
-        text-gray-700
-        bg-white bg-clip-padding
-        border border-solid border-gray-300
-        rounded
-        transition
-        ease-in-out
-        m-0
-        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput8"
-        placeholder="Email address">
     </div>
-    <div class="form-group mb-6">
-      <textarea
-      class="
-        form-control
-        block
-        w-full
-        px-3
-        py-1.5
-        text-base
-        font-normal
-        text-gray-700
-        bg-white bg-clip-padding
-        border border-solid border-gray-300
-        rounded
-        transition
-        ease-in-out
-        m-0
-        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
-      "
-      id="exampleFormControlTextarea13"
-      rows="3"
-      placeholder="Message"
-    ></textarea>
-    </div>
-    <div class="form-group form-check text-center mb-6">
-      <input type="checkbox"
-        class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain mr-2 cursor-pointer"
-        id="exampleCheck87" checked>
-      <label class="form-check-label inline-block text-gray-800" for="exampleCheck87">Send me a copy of this message</label>
-    </div>
-    <button type="submit" class="
-      w-full
-      px-6
-      py-2.5
-      bg-blue-600
-      text-white
-      font-medium
-      text-xs
-      leading-tight
-      uppercase
-      rounded
-      shadow-md
-      hover:bg-blue-700 hover:shadow-lg
-      focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0
-      active:bg-blue-800 active:shadow-lg
-      transition
-      duration-150
-      ease-in-out">Send</button>
-  </form>
-</div>
-   
   );
 }

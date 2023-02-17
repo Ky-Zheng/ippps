@@ -95,7 +95,7 @@ var AppShell = ({ children }) => {
 import { jsx as jsx4, jsxs as jsxs3 } from "react/jsx-runtime";
 var Card = ({ ...props }) => {
   return /* @__PURE__ */ jsxs3("div", {
-    className: "flex flex-1 flex-col justify-between max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700",
+    className: "my-3 flex flex-1 flex-col justify-between max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700",
     children: [
       /* @__PURE__ */ jsx4("a", {
         href: "#",
@@ -146,7 +146,7 @@ var Card = ({ ...props }) => {
             href: "/favorite",
             className: "inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800",
             children: [
-              "Add to Favorite",
+              props.addorremove,
               /* @__PURE__ */ jsx4("svg", {
                 "aria-hidden": "true",
                 className: "w-4 h-4 ml-2 -mr-1",
@@ -216,7 +216,7 @@ var ProductCard = ({ ...props }) => {
   });
 };
 
-// components/tabs/tab.tsx
+// components/tabs/tab-home.tsx
 import { jsx as jsx6, jsxs as jsxs5 } from "react/jsx-runtime";
 var Tabs = () => {
   return /* @__PURE__ */ jsxs5("ul", {
@@ -225,18 +225,10 @@ var Tabs = () => {
       /* @__PURE__ */ jsx6("li", {
         className: "mr-2",
         children: /* @__PURE__ */ jsx6("a", {
-          href: "#",
+          href: "/home",
           "aria-current": "page",
           className: "inline-block p-4 text-blue-600 bg-gray-100 rounded-t-lg active dark:bg-gray-800 dark:text-blue-500",
           children: "Home"
-        })
-      }),
-      /* @__PURE__ */ jsx6("li", {
-        className: "mr-2",
-        children: /* @__PURE__ */ jsx6("a", {
-          href: "/favorite",
-          className: "inline-block p-4 rounded-t-lg hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300",
-          children: "Favorite"
         })
       }),
       /* @__PURE__ */ jsx6("li", {
@@ -246,6 +238,118 @@ var Tabs = () => {
           className: "inline-block p-4 rounded-t-lg hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300",
           children: "Prediction"
         })
+      }),
+      /* @__PURE__ */ jsx6("li", {
+        className: "mr-2",
+        children: /* @__PURE__ */ jsx6("a", {
+          href: "/favorite",
+          className: "inline-block p-4 rounded-t-lg hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300",
+          children: "Favorite"
+        })
+      })
+    ]
+  });
+};
+
+// components/tabs/tab-prediction.tsx
+import { jsx as jsx7, jsxs as jsxs6 } from "react/jsx-runtime";
+var PredTabs = () => {
+  return /* @__PURE__ */ jsxs6("ul", {
+    className: "mb-2 flex flex-wrap text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400",
+    children: [
+      /* @__PURE__ */ jsx7("li", {
+        className: "mr-2",
+        children: /* @__PURE__ */ jsx7("a", {
+          href: "/home",
+          className: "inline-block p-4 rounded-t-lg hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300",
+          children: "Home"
+        })
+      }),
+      /* @__PURE__ */ jsx7("li", {
+        className: "mr-2",
+        children: /* @__PURE__ */ jsx7("a", {
+          href: "/prediction",
+          "aria-current": "page",
+          className: "inline-block p-4 text-blue-600 bg-gray-100 rounded-t-lg active dark:bg-gray-800 dark:text-blue-500",
+          children: "Prediction"
+        })
+      }),
+      /* @__PURE__ */ jsx7("li", {
+        className: "mr-2",
+        children: /* @__PURE__ */ jsx7("a", {
+          href: "/favorite",
+          className: "inline-block p-4 rounded-t-lg hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300",
+          children: "Favorite"
+        })
+      })
+    ]
+  });
+};
+
+// components/tabs/tab-favorite.tsx
+import { jsx as jsx8, jsxs as jsxs7 } from "react/jsx-runtime";
+var FavTabs = () => {
+  return /* @__PURE__ */ jsxs7("ul", {
+    className: "mb-2 flex flex-wrap text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400",
+    children: [
+      /* @__PURE__ */ jsx8("li", {
+        className: "mr-2",
+        children: /* @__PURE__ */ jsx8("a", {
+          href: "/home",
+          className: "inline-block p-4 rounded-t-lg hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300",
+          children: "Home"
+        })
+      }),
+      /* @__PURE__ */ jsx8("li", {
+        className: "mr-2",
+        children: /* @__PURE__ */ jsx8("a", {
+          href: "/prediction",
+          className: "inline-block p-4 rounded-t-lg hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300",
+          children: "Prediction"
+        })
+      }),
+      /* @__PURE__ */ jsx8("li", {
+        className: "mr-2",
+        children: /* @__PURE__ */ jsx8("a", {
+          href: "/favorite",
+          "aria-current": "page",
+          className: "inline-block p-4 text-blue-600 bg-gray-100 rounded-t-lg active dark:bg-gray-800 dark:text-blue-500",
+          children: "Favorite"
+        })
+      })
+    ]
+  });
+};
+
+// components/tabs/tab-login.tsx
+import { jsx as jsx9, jsxs as jsxs8 } from "react/jsx-runtime";
+var LoginTabs = () => {
+  return /* @__PURE__ */ jsxs8("ul", {
+    className: "mb-2 flex flex-wrap text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400",
+    children: [
+      /* @__PURE__ */ jsx9("li", {
+        className: "mr-2",
+        children: /* @__PURE__ */ jsx9("a", {
+          href: "/home",
+          className: "inline-block p-4 rounded-t-lg hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300",
+          children: "Home"
+        })
+      }),
+      /* @__PURE__ */ jsx9("li", {
+        className: "mr-2",
+        children: /* @__PURE__ */ jsx9("a", {
+          href: "/prediction",
+          className: "inline-block p-4 rounded-t-lg hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300",
+          children: "Prediction"
+        })
+      }),
+      /* @__PURE__ */ jsx9("li", {
+        className: "mr-2",
+        children: /* @__PURE__ */ jsx9("a", {
+          href: "/favorite",
+          className: "inline-block p-4 rounded-t-lg hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300",
+          children: "Favorite"
+        })
       })
     ]
   });
@@ -253,6 +357,9 @@ var Tabs = () => {
 export {
   AppShell,
   Card,
+  FavTabs,
+  LoginTabs,
+  PredTabs,
   ProductCard,
   Tabs
 };
