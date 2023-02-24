@@ -2,7 +2,6 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/home": "pages/home.js",
-  "/favorite": "pages/favorite.js",
-  "/prediction": "pages/prediction.js"
+  "/": "pages/index.js",
+  "/login": "pages/login.js"
 }
